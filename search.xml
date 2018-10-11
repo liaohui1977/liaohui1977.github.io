@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[配置 Hexo - 1]]></title>
     <url>%2F2018%2F10%2F11%2Fconfigure-hexo-1%2F</url>
-    <content type="text"><![CDATA[站点配置 设定语言编辑站点配置文件，language: zh_CN 安装主题 next Git Clone 最新 1git clone https://github.com/theme-next/hexo-theme-next.git themes/next 启用主题修改站点配置文件， 找到 theme ，并将其值更改为 next 配置主题 next 选择 Scheme修改主题配置文件 增加分类页、标签页 12hexo new page "categories"hexo new page "tags" 修改page “categories”的 front_matter 如下：12type: "categories"comments: false #关闭评论 修改page “tags”的 front_matter 如下：12type: "tags"comments: false 设置菜单菜单增加“分类”、“标签”编辑主题配置文件,找到如下配置12#tags: /tags/ || tags#categories: /categories/ || th 修改为12tags: /tags/ || tagscategories: /categories/ || th 参考 next官网]]></content>
+    <content type="text"><![CDATA[站点配置 设定语言编辑站点配置文件，language: zh_CN 安装主题 next 下载 1git clone https://github.com/theme-next/hexo-theme-next.git themes/next 启用主题修改站点配置文件， 找到 theme ，并将其值更改为 next 配置主题 next 选择 Scheme修改主题配置文件 增加分类页、标签页 12hexo new page "categories"hexo new page "tags" 修改page “categories”的 front_matter 如下： 12type: "categories"comments: false #关闭评论 修改page “tags”的 front_matter 如下： 12type: "tags"comments: false 设置菜单菜单增加“分类”、“标签”编辑主题配置文件,找到如下配置，去掉注释# 12#tags: /tags/ || tags#categories: /categories/ || th 参考 next官网 Hexo中文]]></content>
       <categories>
         <category>技术</category>
         <category>其他</category>
