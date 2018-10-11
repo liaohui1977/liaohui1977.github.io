@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="">
+<html class="theme-next pisces use-motion" lang="">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -84,7 +84,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '6.4.2',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="liaohui&#39;s blog">
 <meta property="og:description" content="我的第一篇博客，记下 Hexo 的折腾 安装前提 nodejs git  注册配置Github 创建仓库(名称为 注册名.github.io)  配置SSH Key 123#在~/.ssh下生成id_rsa私钥和id_rsa.pub公钥ssh-keygen -t rsa -b 4096 -C &quot;email地址&quot; clip.exe &amp;lt; ~/.ssh/id_rsa.pub   将剪贴板上的公钥部">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-11T02:06:04.165Z">
+<meta property="og:updated_time" content="2018-10-11T02:31:31.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github + Hexo + Win7 安装手记">
 <meta name="twitter:description" content="我的第一篇博客，记下 Hexo 的折腾 安装前提 nodejs git  注册配置Github 创建仓库(名称为 注册名.github.io)  配置SSH Key 123#在~/.ssh下生成id_rsa私钥和id_rsa.pub公钥ssh-keygen -t rsa -b 4096 -C &quot;email地址&quot; clip.exe &amp;lt; ~/.ssh/id_rsa.pub   将剪贴板上的公钥部">
@@ -238,9 +238,6 @@
   
 
   
-    
-
-  
 
   
 </nav>
@@ -260,6 +257,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
           
           <div id="content" class="content">
             
@@ -339,7 +339,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Updated at: 2018-10-11 10:06:04" itemprop="dateModified" datetime="2018-10-11T10:06:04+08:00">2018-10-11</time>
+                <time title="Updated at: 2018-10-11 10:31:31" itemprop="dateModified" datetime="2018-10-11T10:31:31+08:00">2018-10-11</time>
               
             
           </span>
@@ -401,6 +401,9 @@
 <p>打开文件 _config.yml,修改部署配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#修改为git部署,注意：号后面必须带半角的空格</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: git@github.com:注册名/注册名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean <span class="comment">#清除原来生成的静态内容</span></span><br><span class="line">hexo generate <span class="comment">#生成静态网页</span></span><br><span class="line">hexo deploy <span class="comment">#部署到github</span></span><br></pre></td></tr></table></figure>
 <p>此时可以打开 https://注册名.github.io 了，看到个人博客了</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo中文</a></li>
+</ul>
 
       
     </div>
@@ -530,7 +533,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装前提"><span class="nav-number">1.</span> <span class="nav-text">安装前提</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注册配置Github"><span class="nav-number">2.</span> <span class="nav-text">注册配置Github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">3.</span> <span class="nav-text">安装Hexo</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装前提"><span class="nav-number">1.</span> <span class="nav-text">安装前提</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注册配置Github"><span class="nav-number">2.</span> <span class="nav-text">注册配置Github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">3.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -563,8 +566,6 @@
 
 
 
-
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
 
 
 
@@ -660,6 +661,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.2"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
