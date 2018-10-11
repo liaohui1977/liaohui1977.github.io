@@ -15,7 +15,7 @@
   <entry>
     <title><![CDATA[Github + Hexo + Win7 安装手记]]></title>
     <url>%2F2018%2F10%2F10%2FGithub_Hexo%2F</url>
-    <content type="text"><![CDATA[安装前提 nodejs git 注册配置Github 创建仓库(名称为 注册名.github.io) 配置SSH Key 123#在~/.ssh下生成id_rsa私钥和id_rsa.pub公钥ssh-keygen -t rsa -b 4096 -C "email地址" clip.exe &lt; ~/.ssh/id_rsa.pub 将剪贴板上的公钥部署到github中的 ssh key,实现免密部署 安装Hexo 建立文件夹 D:\hexo，Git Bash Here 安装 hexo 1npm install -g hexo-cli 建站 12hexo initnpm install 配置部署 1npm install hexo-deployer-git--save #支持hexo的git部署 打开文件 _config.yml,修改部署配置12345#修改为git部署,注意：号后面必须带半角的空格deploy: type: git repo: git@github.com:注册名/注册名.github.io.git branch: master 123hexo clean #清除原来生成的静态内容hexo generate #生成静态网页hexo deploy #部署到github 此时可以打开 https://注册名.github.io 了，看到个人博客了 参考 Hexo中文]]></content>
+    <content type="text"><![CDATA[安装前提 nodejs git 注册配置Github 创建仓库(名称为 注册名.github.io) 配置SSH Key 123#在~/.ssh下生成id_rsa私钥和id_rsa.pub公钥ssh-keygen -t rsa -b 4096 -C "email地址" clip.exe &lt; ~/.ssh/id_rsa.pub 将剪贴板上的公钥部署到github中的 ssh key,实现免密部署 安装Hexo 建立文件夹 D:\hexo，Git Bash Here 安装 hexo 1npm install -g hexo-cli 建站 12hexo initnpm install 配置部署 1npm install hexo-deployer-git--save #支持hexo的git部署 打开文件 _config.yml,修改部署配置 12345#修改为git部署,注意：号后面必须带半角的空格deploy: type: git repo: git@github.com:注册名/注册名.github.io.git branch: master 123hexo clean #清除原来生成的静态内容hexo generate #生成静态网页hexo deploy #部署到github 此时可以打开 https://注册名.github.io 了，看到个人博客了 参考 Hexo中文]]></content>
       <categories>
         <category>技术</category>
         <category>其他</category>
