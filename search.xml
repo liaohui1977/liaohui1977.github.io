@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[TP5学习手记1]]></title>
+    <url>%2F2018%2F11%2F02%2FTP5Learn1%2F</url>
+    <content type="text"><![CDATA[搭建环境安装 LANMP 安装 Ubuntu 16.04 一键包安装，采用wdlinux的一键包 123456789mkdir wdlinux; cd wdliunx wget http://dl.wdlinux.cn/files/lanmp_v3.tar.gztar zxvf lanmp_v3.tar.gz# 默认安装的是 PHP5 版本，修改安装的PHP版本为 7.2.11 以及相应下载地址sed -i 's/^PHP_VER.*/PHP_VER="7.2.11"/' lib/common.conf sed -i 's/^P7.*/P7=1/' lib/common.confsed -i 's/^PHP_URL.*/PHP_URL="http:\/\/cn2.php.net\/distributions\/php-7.2.11.tar.gz"/' lib/common.conf # 开始安装，选择4全部安装sudo ./lanmp.sh 安装后，会安装好 nginx，apache，mysql，php，并且可以通过 http://服务器IP:8080管理服务器 安装 Pdo_dblib,（用于连接Sql2005） freeTds 123456wget ftp://ftp.freetds.org/pub/freetds/current/freetds-1.00.104.tar.gztar zxvf freetds-1.00.104.tar.gzcd freetds-1.00.104/./configure --prefix=/usr/local/freetds --with-tdsver=7.1 --enable-msdblibmakesudo make install 安装扩展 pdo_dblib cd ~/wdlinux/src/ tar zxvf php-7.2.11.tar.gz cd php-7.2.11/ext/pdo_dblib/ sudo ./configure --with-php-config=/www/wdlinux/php/bin/php-config --with-pdo-dblib=/usr/local/freetds sudo make sudo make install # 修改PHP的配置文件，增加扩展 pdo_dblib sed '$a/extension="/www/wdlinux/apache_php-7.2.11/lib/php/extensions/no-debug-non-zts-20170718/pdo_dblib.so"' /www/wdlinux/php/etc/php.ini # 检查 cd ~/;echo "&lt;?php phpinfo();"&gt;info.php; /www/wdlinux/php/bin/php info.php|grep pdo_dblib wdlinux一键包官网参考freetds稳定包下载附件1lanmp_v3.tar.gz附件2freetds-1.00.104.tar.gz]]></content>
+      <tags>
+        <tag>PHP</tag>
+        <tag>TP5</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[2018年8月贵州行]]></title>
     <url>%2F2018%2F10%2F12%2FGuiZhou201808%2F</url>
     <content type="text"><![CDATA[8月11日贵阳北站 下午5点贵阳北，好大的贵阳北站！休息一个半小时转车遵义，本想到车站附近找点特色小吃，步行半小时都没出站，放弃了，在车站吃的晚餐，果然即贵又不好吃。 8月12日遵义 阳光明媚，天气很好，早上吃了遵义虾子羊肉粉，真的好好吃，和湖南吃到的遵义羊肉粉完全是两个味儿,感谢小娟同学的款待和全程陪同 遵义会址 红军山 遵义会址出来后，步行到红军山，从红军山山脚一直爬到凤凰楼，脚不是自己的了,两个小伙子表现出众 8月13日回到贵阳 进贵阳高铁上拍的，很壮观，很现代 二七路小吃街用的晚餐，贵州小吃一条吃，目不暇接 8月14日贵阳黔灵山公园 早餐花溪牛肉粉，名不虚传 贵州特色，花椒粉，自己添加 黔灵山公园大门 好多猴子，萌猴 侗家食府用的午餐，点了特色酸汤鱼，太重的山胡椒油味，最后还是经典的青椒炒肉下饭 8月15日西江苗寨 非常浓郁的苗族气息,一路上一会儿天晴一会儿小雨，小雨儿一阵阵的，果然是贵州天无三日晴 苗族长桌宴 8月16日小七孔 8月17日黄果树瀑布]]></content>
