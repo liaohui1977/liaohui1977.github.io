@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="安装 LANMP 安装 Ubuntu 16.04  一键包安装，采用wdlinux的一键包   123456789mkdir wdlinux; cd wdliunx wget http://dl.wdlinux.cn/files/lanmp_v3.tar.gztar zxvf lanmp_v3.tar.gz# 默认安装的是 PHP5 版本，修改安装的PHP版本为 7.2.11 以及相应下载地址se">
+  <meta name="description" content="安装lanmp，composer，tp5">
 <meta name="keywords" content="PHP,TP5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TP5学习手记1(搭建环境)">
 <meta property="og:url" content="https://blog.liaohui.info/2018/11/02/TP5Learn1/index.html">
 <meta property="og:site_name" content="廖辉&#39;s blog">
-<meta property="og:description" content="安装 LANMP 安装 Ubuntu 16.04  一键包安装，采用wdlinux的一键包   123456789mkdir wdlinux; cd wdliunx wget http://dl.wdlinux.cn/files/lanmp_v3.tar.gztar zxvf lanmp_v3.tar.gz# 默认安装的是 PHP5 版本，修改安装的PHP版本为 7.2.11 以及相应下载地址se">
+<meta property="og:description" content="安装lanmp，composer，tp5">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-05T08:38:01.130Z">
+<meta property="og:updated_time" content="2018-11-06T08:29:40.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TP5学习手记1(搭建环境)">
-<meta name="twitter:description" content="安装 LANMP 安装 Ubuntu 16.04  一键包安装，采用wdlinux的一键包   123456789mkdir wdlinux; cd wdliunx wget http://dl.wdlinux.cn/files/lanmp_v3.tar.gztar zxvf lanmp_v3.tar.gz# 默认安装的是 PHP5 版本，修改安装的PHP版本为 7.2.11 以及相应下载地址se">
+<meta name="twitter:description" content="安装lanmp，composer，tp5">
 
 
 
@@ -358,7 +358,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-05 16:38:01" itemprop="dateModified" datetime="2018-11-05T16:38:01+08:00">2018-11-05</time>
+                <time title="修改时间：2018-11-06 16:29:40" itemprop="dateModified" datetime="2018-11-06T16:29:40+08:00">2018-11-06</time>
               
             
           </span>
@@ -402,6 +402,8 @@
           
 
           
+              <div class="post-description">安装lanmp，composer，tp5</div>
+          
 
         </div>
       </header>
@@ -425,7 +427,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mkdir wdlinux; <span class="built_in">cd</span> wdliunx </span><br><span class="line">wget http://dl.wdlinux.cn/files/lanmp_v3.tar.gz</span><br><span class="line">tar zxvf lanmp_v3.tar.gz</span><br><span class="line"><span class="comment"># 默认安装的是 PHP5 版本，修改安装的PHP版本为 7.2.11 以及相应下载地址</span></span><br><span class="line">sed -i <span class="string">'s/^PHP_VER.*/PHP_VER="7.2.11"/'</span> lib/common.conf </span><br><span class="line">sed -i <span class="string">'s/^P7.*/P7=1/'</span> lib/common.conf</span><br><span class="line">sed -i <span class="string">'s/^PHP_URL.*/PHP_URL="http:\/\/cn2.php.net\/distributions\/php-7.2.11.tar.gz"/'</span> lib/common.conf </span><br><span class="line"><span class="comment"># 开始安装，选择4全部安装</span></span><br><span class="line">sudo ./lanmp.sh</span><br></pre></td></tr></table></figure>
 <p>安装后，会安装好 nginx，apache，mysql，php，并且可以通过 <a href="http://tp5_learn:8080" target="_blank" rel="noopener">http://服务器IP:8080</a>管理服务器</p>
 <ul>
-<li><p>安装 Pdo_dblib,（用于连接Sql2005）</p>
+<li><p>安装 Pdo_dblib,（用于连接mssql2005）</p>
 <ul>
 <li><p>freeTds</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget ftp://ftp.freetds.org/pub/freetds/stable/freetds-1.00.104.tar.gz</span><br><span class="line">tar zxvf freetds-1.00.104.tar.gz</span><br><span class="line"><span class="built_in">cd</span> freetds-1.00.104/</span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/freetds --with-tdsver=7.1 --<span class="built_in">enable</span>-msdblib</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
@@ -445,6 +447,9 @@
 </li>
 <li><p>更新TP5框架</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer update topthink/framework</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改框架以支持dblib连接Sqlsrv<br>修改think\db\connector下的类Sqlsrv的parseDsn方法为：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$dsn = <span class="string">'dblib:dbname='</span> . $config[<span class="string">'database'</span>] . <span class="string">';host='</span> . $config[<span class="string">'hostname'</span>];</span><br><span class="line"><span class="keyword">if</span> (!<span class="keyword">empty</span>($config[<span class="string">'hostport'</span>])) &#123;</span><br><span class="line">    <span class="comment">//$dsn .= ',' . $config['hostport'];</span></span><br><span class="line">    $dsn .= <span class="string">':'</span> . $config[<span class="string">'hostport'</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> $dsn;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
@@ -494,6 +499,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/06/TP5Learn2/" rel="prev" title="TP5学习手记2(开发规范)">
+                TP5学习手记2(开发规范) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -563,7 +572,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

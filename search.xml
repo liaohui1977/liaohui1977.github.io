@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[TP5学习手记2(开发规范)]]></title>
+    <url>%2F2018%2F11%2F06%2FTP5Learn2%2F</url>
+    <content type="text"><![CDATA[开发规范目录 小写 + 下划线 文件 类库、函数文件统一以.php为后缀 类文件名均以命名空间定义，并且命名空间的路径和类库文件所在路径一致 类文件采用驼峰法命名（首字母大写），其它文件采用小写+下划线命名 类名和类文件名保持一致，统一采用驼峰法命名（首字母大写） 函数和类、属性命名 类的命名采用驼峰法（首字母大写），例如 User、UserType，默认不需要添加后缀，例如UserController应该直接命名为User； 函数的命名使用小写字母和下划线（小写字母开头）的方式，例如 get_client_ip； 方法的命名使用驼峰法（首字母小写），例如 getUserName； 属性的命名使用驼峰法（首字母小写），例如 tableName、instance； 特例：以双下划线打头的函数或方法作为魔术方法，例如 call 和 __autoload； 常量和配置 常量以大写字母和下划线命名，例如 APP_PATH； 配置参数以小写字母和下划线命名，例如 url_route_on 和url_convert； 环境变量定义使用大写字母和下划线命名，例如APP_DEBUG； 数据表和字段 数据表和字段采用小写加下划线方式命名，并注意字段名不要以下划线开头，例如 think_user 表和 user_name字段，不建议使用驼峰和中文作为数据表及字段命名。 官方参考]]></content>
+      <categories>
+        <category>技术</category>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>PHP</tag>
+        <tag>TP5</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[TP5学习手记1(搭建环境)]]></title>
     <url>%2F2018%2F11%2F02%2FTP5Learn1%2F</url>
-    <content type="text"><![CDATA[安装 LANMP 安装 Ubuntu 16.04 一键包安装，采用wdlinux的一键包 123456789mkdir wdlinux; cd wdliunx wget http://dl.wdlinux.cn/files/lanmp_v3.tar.gztar zxvf lanmp_v3.tar.gz# 默认安装的是 PHP5 版本，修改安装的PHP版本为 7.2.11 以及相应下载地址sed -i 's/^PHP_VER.*/PHP_VER="7.2.11"/' lib/common.conf sed -i 's/^P7.*/P7=1/' lib/common.confsed -i 's/^PHP_URL.*/PHP_URL="http:\/\/cn2.php.net\/distributions\/php-7.2.11.tar.gz"/' lib/common.conf # 开始安装，选择4全部安装sudo ./lanmp.sh 安装后，会安装好 nginx，apache，mysql，php，并且可以通过 http://服务器IP:8080管理服务器 安装 Pdo_dblib,（用于连接Sql2005） freeTds 123456wget ftp://ftp.freetds.org/pub/freetds/stable/freetds-1.00.104.tar.gztar zxvf freetds-1.00.104.tar.gzcd freetds-1.00.104/./configure --prefix=/usr/local/freetds --with-tdsver=7.1 --enable-msdblibmakesudo make install 安装扩展 pdo_dblibhe 1234567891011cd ~/wdlinux/src/tar zxvf php-7.2.11.tar.gz cd php-7.2.11/ext/pdo_dblib/sudo ./configure --with-php-config=/www/wdlinux/php/bin/php-config --with-pdo-dblib=/usr/local/freetdssudo makesudo make install# 修改PHP的配置文件，增加扩展 pdo_dblibsed '$a/extension="/www/wdlinux/apache_php-7.2.11/lib/php/extensions/no-debug-non-zts-20170718/pdo_dblib.so"' /www/wdlinux/php/etc/php.ini# 检查cd ~/;echo "&lt;?php phpinfo();"&gt;info.php;/www/wdlinux/php/bin/php info.php|grep pdo_dblib 安装TP5 安装 composer 123456curl -sS https://getcomposer.org/installer | phpmv composer.phar /usr/local/bin/composer#使用国内镜像composer config -g repo.packagist composer https://packagist.phpcomposer.com#或者composer config -g repo.packagist composer https://packagist.laravel-china.org 创建TP5项目 1composer create-project topthink/think tp5 更新TP5框架 1composer update topthink/framework wdlinux一键包官网参考freetds稳定包下载本地下载lanmp_v3.tar.gz本地下载freetds-1.00.104.tar.gz官方手册ThinkPHP5.1完全开发手册]]></content>
+    <content type="text"><![CDATA[安装 LANMP 安装 Ubuntu 16.04 一键包安装，采用wdlinux的一键包 123456789mkdir wdlinux; cd wdliunx wget http://dl.wdlinux.cn/files/lanmp_v3.tar.gztar zxvf lanmp_v3.tar.gz# 默认安装的是 PHP5 版本，修改安装的PHP版本为 7.2.11 以及相应下载地址sed -i 's/^PHP_VER.*/PHP_VER="7.2.11"/' lib/common.conf sed -i 's/^P7.*/P7=1/' lib/common.confsed -i 's/^PHP_URL.*/PHP_URL="http:\/\/cn2.php.net\/distributions\/php-7.2.11.tar.gz"/' lib/common.conf # 开始安装，选择4全部安装sudo ./lanmp.sh 安装后，会安装好 nginx，apache，mysql，php，并且可以通过 http://服务器IP:8080管理服务器 安装 Pdo_dblib,（用于连接mssql2005） freeTds 123456wget ftp://ftp.freetds.org/pub/freetds/stable/freetds-1.00.104.tar.gztar zxvf freetds-1.00.104.tar.gzcd freetds-1.00.104/./configure --prefix=/usr/local/freetds --with-tdsver=7.1 --enable-msdblibmakesudo make install 安装扩展 pdo_dblibhe 1234567891011cd ~/wdlinux/src/tar zxvf php-7.2.11.tar.gz cd php-7.2.11/ext/pdo_dblib/sudo ./configure --with-php-config=/www/wdlinux/php/bin/php-config --with-pdo-dblib=/usr/local/freetdssudo makesudo make install# 修改PHP的配置文件，增加扩展 pdo_dblibsed '$a/extension="/www/wdlinux/apache_php-7.2.11/lib/php/extensions/no-debug-non-zts-20170718/pdo_dblib.so"' /www/wdlinux/php/etc/php.ini# 检查cd ~/;echo "&lt;?php phpinfo();"&gt;info.php;/www/wdlinux/php/bin/php info.php|grep pdo_dblib 安装TP5 安装 composer 123456curl -sS https://getcomposer.org/installer | phpmv composer.phar /usr/local/bin/composer#使用国内镜像composer config -g repo.packagist composer https://packagist.phpcomposer.com#或者composer config -g repo.packagist composer https://packagist.laravel-china.org 创建TP5项目 1composer create-project topthink/think tp5 更新TP5框架 1composer update topthink/framework 修改框架以支持dblib连接Sqlsrv修改think\db\connector下的类Sqlsrv的parseDsn方法为： 123456$dsn = 'dblib:dbname=' . $config['database'] . ';host=' . $config['hostname'];if (!empty($config['hostport'])) &#123; //$dsn .= ',' . $config['hostport']; $dsn .= ':' . $config['hostport'];&#125;return $dsn; wdlinux一键包官网参考freetds稳定包下载本地下载lanmp_v3.tar.gz本地下载freetds-1.00.104.tar.gz官方手册ThinkPHP5.1完全开发手册]]></content>
       <categories>
         <category>技术</category>
         <category>PHP</category>
@@ -26,7 +39,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[配置 Hexo - 1]]></title>
+    <title><![CDATA[配置 Hexo]]></title>
     <url>%2F2018%2F10%2F11%2Fconfigure-hexo-1%2F</url>
     <content type="text"><![CDATA[站点配置 设定语言编辑站点配置文件，language: zh_CN 安装主题 next 下载 1git clone https://github.com/theme-next/hexo-theme-next.git themes/next 启用主题 修改站点配置文件， 找到 theme ，并将其值更改为 next 配置主题 next 选择 Scheme 修改主题配置文件 增加分类页、标签页 12hexo new page "categories"hexo new page "tags" 修改page “categories”的 front_matter 如下： 12type: "categories"comments: false #关闭评论 修改page “tags”的 front_matter 如下： 12type: "tags"comments: false 设置菜单 菜单增加“分类”、“标签” 编辑主题配置文件,找到如下配置，去掉注释# 12#tags: /tags/ || tags#categories: /categories/ || th 代码块增加按钮“复制” 修改主题配置文件codeblock.copy_button.enable = true 参考 next官网 Hexo中文]]></content>
       <categories>
