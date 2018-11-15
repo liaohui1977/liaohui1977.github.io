@@ -298,6 +298,212 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.liaohui.info/2018/11/15/Win2003-MySql5-6-42/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liaohui">
+      <meta itemprop="description" content="记录生活工作的点点滴滴">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="廖辉's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/15/Win2003-MySql5-6-42/" itemprop="url">
+                  Win2003下安装MySql 5.6.42
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-15 09:03:43 / 修改时间：09:41:07" itemprop="dateCreated datePublished" datetime="2018-11-15T09:03:43+08:00">2018-11-15</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/数据库/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><p>下载 <a href="https://dev.mysql.com/downloads/file/?id=481159" target="_blank" rel="noopener">mysql-5.7.24-win32.zip</a></p>
+<blockquote>
+<p>操作系统是 32位Win2003&gt;<br>MySql 5.7 会提示“不是有效的 Win32 应用程序”，该版本不适用    </p>
+</blockquote>
+</li>
+<li><p>解压到 E:\mysql-5.6.42-win32</p>
+</li>
+<li><p>设置配置文件</p>
+<blockquote>
+<p>复制 my-default.ini 到 my.ini,修改 my.ini   </p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="attr">port</span>=<span class="number">3306</span></span><br><span class="line"><span class="attr">character_set_server</span>=utf8mb4</span><br><span class="line"><span class="attr">basedir</span>=E:\\mysql-<span class="number">5.6</span>.<span class="number">42</span>-win32</span><br><span class="line"><span class="attr">datadir</span>=E:\\mysqldb\\data</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p>将MySql安装目录下 data 下所有文件拷贝到 <em>datadir</em>(E:\mysqldb\data) 下</p>
+<ul>
+<li>配置 MySql 为系统服务<br>命令符界面下运行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置为系统服务</span></span><br><span class="line">E:\\mysql-5.6.42-win32\bin\mysqld.exe -install</span><br><span class="line"><span class="comment">#启用MySQL服务</span></span><br><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>卸载服务用<code>mysqld.exe -remove</code></p>
+<ul>
+<li>配置环境变量<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysdm.cpl</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p>环境变量PATH增加 E:\mysql-5.6.42-win32\bin</p>
+<ul>
+<li>设置MySql初始密码<blockquote>
+<p>启动MySql服务后，默认用户 root ， 密码为空, 仅本地登录<br><code>mysql -uroot</code>连接MySql</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br><span class="line">update user <span class="built_in">set</span> password=password(<span class="string">"new password"</span>) <span class="built_in">where</span> user=<span class="string">"root"</span>;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.liaohui.info/2018/11/06/TP5Learn2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -361,7 +567,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-07 09:28:17" itemprop="dateModified" datetime="2018-11-07T09:28:17+08:00">2018-11-07</time>
+                <time title="修改时间：2018-11-07 09:29:23" itemprop="dateModified" datetime="2018-11-07T09:29:23+08:00">2018-11-07</time>
               
             
           </span>
@@ -420,7 +626,7 @@
 
       
         
-          Tp5 的开发规范
+          Tp5.1 的开发规范和目录结构
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1241,7 +1447,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1264,7 +1470,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1285,7 +1495,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
