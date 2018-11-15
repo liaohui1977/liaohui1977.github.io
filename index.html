@@ -344,7 +344,7 @@
                 
               
 
-              <time title="创建时间：2018-11-15 09:03:43 / 修改时间：09:41:07" itemprop="dateCreated datePublished" datetime="2018-11-15T09:03:43+08:00">2018-11-15</time>
+              <time title="创建时间：2018-11-15 09:03:43 / 修改时间：10:12:34" itemprop="dateCreated datePublished" datetime="2018-11-15T09:03:43+08:00">2018-11-15</time>
             
 
             
@@ -417,12 +417,10 @@
         
           
             <ul>
-<li><p>下载 <a href="https://dev.mysql.com/downloads/file/?id=481159" target="_blank" rel="noopener">mysql-5.7.24-win32.zip</a></p>
+<li><p>下载 <a href="https://dev.mysql.com/downloads/file/?id=481159" target="_blank" rel="noopener">mysql-5.6.42-win32.zip</a>解压到 E:\mysql-5.6.42-win32</p>
 <blockquote>
 <p>操作系统是 32位Win2003&gt;<br>MySql 5.7 会提示“不是有效的 Win32 应用程序”，该版本不适用    </p>
 </blockquote>
-</li>
-<li><p>解压到 E:\mysql-5.6.42-win32</p>
 </li>
 <li><p>设置配置文件</p>
 <blockquote>
@@ -431,26 +429,27 @@
 </blockquote>
 </li>
 </ul>
+<blockquote>
 <p>将MySql安装目录下 data 下所有文件拷贝到 <em>datadir</em>(E:\mysqldb\data) 下</p>
+</blockquote>
 <ul>
 <li>配置 MySql 为系统服务<br>命令符界面下运行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置为系统服务</span></span><br><span class="line">E:\\mysql-5.6.42-win32\bin\mysqld.exe -install</span><br><span class="line"><span class="comment">#启用MySQL服务</span></span><br><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
 <p>卸载服务用<code>mysqld.exe -remove</code></p>
+</blockquote>
 <ul>
 <li>配置环境变量<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysdm.cpl</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-</blockquote>
 <p>环境变量PATH增加 E:\mysql-5.6.42-win32\bin</p>
 <ul>
-<li>设置MySql初始密码<blockquote>
-<p>启动MySql服务后，默认用户 root ， 密码为空, 仅本地登录<br><code>mysql -uroot</code>连接MySql</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br><span class="line">update user <span class="built_in">set</span> password=password(<span class="string">"new password"</span>) <span class="built_in">where</span> user=<span class="string">"root"</span>;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
+<li>设置MySql初始密码</li>
 </ul>
+<blockquote>
+<p>启动MySql服务后，默认用户 root ， 密码为空, 仅本地登录<br><code>mysql -uroot</code>连接MySql<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br><span class="line">update user <span class="built_in">set</span> password=password(<span class="string">"new password"</span>) <span class="built_in">where</span> user=<span class="string">"root"</span>;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
 
           
         
