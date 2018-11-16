@@ -298,6 +298,239 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.liaohui.info/2018/11/15/MySql-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liaohui">
+      <meta itemprop="description" content="记录生活工作的点点滴滴">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="廖辉's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/15/MySql-2/" itemprop="url">
+                  MySql 用户管理和授权
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-15 11:24:41" itemprop="dateCreated datePublished" datetime="2018-11-15T11:24:41+08:00">2018-11-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-16 11:22:43" itemprop="dateModified" datetime="2018-11-16T11:22:43+08:00">2018-11-16</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/数据库/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h4><ul>
+<li>创建用户  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'username'</span>@<span class="string">'host'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'password'</span>;</span><br><span class="line">    ``` </span><br><span class="line">    &gt;* username:将创建的用户名</span><br><span class="line">    &gt;* host: 指定该用户在哪个主机上可以登陆，如果是本地用户可用localhost，如果想让该用户可以从任意远程主机登陆，可以使用通配符%</span><br><span class="line">    &gt;* password: 用户的登陆密码，密码可以为空，如果为空则该用户可以不需要密码登陆服务器</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">* 删除用户</span><br><span class="line">    ```sql</span><br><span class="line">    <span class="keyword">DROP</span> <span class="keyword">USER</span> <span class="string">'username'</span>@<span class="string">'host'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>修改密码  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> <span class="keyword">PASSWORD</span> <span class="keyword">FOR</span> <span class="string">'username'</span>@<span class="string">'host'</span> = <span class="keyword">PASSWORD</span>(<span class="string">'newpassword'</span>);</span><br><span class="line">``` </span><br><span class="line">修改当前登录用户的密码:</span><br><span class="line">```sql</span><br><span class="line"><span class="keyword">SET</span> <span class="keyword">PASSWORD</span> = <span class="keyword">PASSWORD</span>(<span class="string">"newpassword"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>查询  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> host,<span class="keyword">user</span> <span class="keyword">from</span> mysql.user;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="授权管理"><a href="#授权管理" class="headerlink" title="授权管理"></a>授权管理</h4><ul>
+<li><p>授予权限<br>  格式: <code>grant 权限 on 数据库对象 to 用户@主机</code></p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">privileges</span> <span class="keyword">ON</span> databasename.tablename <span class="keyword">TO</span> <span class="string">'username'</span>@<span class="string">'host'</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>privileges：操作权限   <pre><code>* SELECT(column,column),INSERT,UPDATE,DELETE   
+* CREATE,ALTER,DROP    
+* INDEX,references    
+* create temporary tables,create view    
+* create routine,alter routine,execute  
+</code></pre></li>
+<li>databasename：数据库名</li>
+<li>tablename：表名，如果要授予该用户对所有数据库和表的相应操作权限则可用<em>表示，如</em>.*</li>
+</ul>
+</blockquote>
+</li>
+<li><p>查看授权</p>
+<ul>
+<li><p>查看自己的授权</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">grants</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看其他人的授权</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">grants</span> <span class="keyword">for</span> <span class="string">'user'</span>@<span class="string">'host'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>撤销授权</p>
+<blockquote>
+<p>类似于授权，将 grant 改为 revoke, to 改为 from 即可</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>grant, revoke 某用户权限后，该用户只有重新连接 MySQL 数据库，权限才能生效  </li>
+<li>如果想让授权的用户，也可以将这些权限 grant 给其他用户，需要选项 “grant option“</li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.liaohui.info/2018/11/15/Win2003-MySql5-6-42/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1446,7 +1679,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

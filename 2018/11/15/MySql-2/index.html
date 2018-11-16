@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="下载和配置新的主题next，设置语言，配置分类页、标签页,设置代码复制">
-<meta name="keywords" content="hexo">
+  <meta name="description" content="用户管理 创建用户  12345678910    CREATE USER &apos;username&apos;@&apos;host&apos; IDENTIFIED BY &apos;password&apos;;    ```     &amp;gt;* username:将创建的用户名    &amp;gt;* host: 指定该用户在哪个主机上可以登陆，如果是本地用户可用localhost，如果想让该用户可以从任意远程主机登陆，可以使用通配符%    &amp;gt">
+<meta name="keywords" content="MySql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="配置 Hexo">
-<meta property="og:url" content="https://blog.liaohui.info/2018/10/11/configure-hexo-1/index.html">
+<meta property="og:title" content="MySql 用户管理和授权">
+<meta property="og:url" content="https://blog.liaohui.info/2018/11/15/MySql-2/index.html">
 <meta property="og:site_name" content="廖辉&#39;s blog">
-<meta property="og:description" content="下载和配置新的主题next，设置语言，配置分类页、标签页,设置代码复制">
+<meta property="og:description" content="用户管理 创建用户  12345678910    CREATE USER &apos;username&apos;@&apos;host&apos; IDENTIFIED BY &apos;password&apos;;    ```     &amp;gt;* username:将创建的用户名    &amp;gt;* host: 指定该用户在哪个主机上可以登陆，如果是本地用户可用localhost，如果想让该用户可以从任意远程主机登陆，可以使用通配符%    &amp;gt">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-06T00:03:20.843Z">
+<meta property="og:updated_time" content="2018-11-16T03:22:43.453Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="配置 Hexo">
-<meta name="twitter:description" content="下载和配置新的主题next，设置语言，配置分类页、标签页,设置代码复制">
+<meta name="twitter:title" content="MySql 用户管理和授权">
+<meta name="twitter:description" content="用户管理 创建用户  12345678910    CREATE USER &apos;username&apos;@&apos;host&apos; IDENTIFIED BY &apos;password&apos;;    ```     &amp;gt;* username:将创建的用户名    &amp;gt;* host: 指定该用户在哪个主机上可以登陆，如果是本地用户可用localhost，如果想让该用户可以从任意远程主机登陆，可以使用通配符%    &amp;gt">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.liaohui.info/2018/10/11/configure-hexo-1/"/>
+  <link rel="canonical" href="https://blog.liaohui.info/2018/11/15/MySql-2/"/>
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>配置 Hexo | 廖辉's blog</title>
+  <title>MySql 用户管理和授权 | 廖辉's blog</title>
   
 
 
@@ -299,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.liaohui.info/2018/10/11/configure-hexo-1/">
+    <link itemprop="mainEntityOfPage" href="https://blog.liaohui.info/2018/11/15/MySql-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liaohui">
@@ -316,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">配置 Hexo
+          <h1 class="post-title" itemprop="name headline">MySql 用户管理和授权
               
             
           </h1>
@@ -341,7 +341,7 @@
                 
               
 
-              <time title="创建时间：2018-10-11 15:40:55" itemprop="dateCreated datePublished" datetime="2018-10-11T15:40:55+08:00">2018-10-11</time>
+              <time title="创建时间：2018-11-15 11:24:41" itemprop="dateCreated datePublished" datetime="2018-11-15T11:24:41+08:00">2018-11-15</time>
             
 
             
@@ -358,7 +358,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-06 08:03:20" itemprop="dateModified" datetime="2018-11-06T08:03:20+08:00">2018-11-06</time>
+                <time title="修改时间：2018-11-16 11:22:43" itemprop="dateModified" datetime="2018-11-16T11:22:43+08:00">2018-11-16</time>
               
             
           </span>
@@ -382,7 +382,14 @@
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/数据库/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a></span>
 
                 
                 
@@ -402,8 +409,6 @@
           
 
           
-              <div class="post-description">下载和配置新的主题next，设置语言，配置分类页、标签页,设置代码复制</div>
-          
 
         </div>
       </header>
@@ -418,51 +423,56 @@
       
 
       
-        <h3 id="站点配置"><a href="#站点配置" class="headerlink" title="站点配置"></a>站点配置</h3><ul>
-<li>设定语言<br>编辑站点配置文件，language: zh_CN</li>
-</ul>
-<h3 id="安装主题-next"><a href="#安装主题-next" class="headerlink" title="安装主题 next"></a>安装主题 next</h3><ul>
-<li><p>下载</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
+        <h4 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h4><ul>
+<li>创建用户  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'username'</span>@<span class="string">'host'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'password'</span>;</span><br><span class="line">    ``` </span><br><span class="line">    &gt;* username:将创建的用户名</span><br><span class="line">    &gt;* host: 指定该用户在哪个主机上可以登陆，如果是本地用户可用localhost，如果想让该用户可以从任意远程主机登陆，可以使用通配符%</span><br><span class="line">    &gt;* password: 用户的登陆密码，密码可以为空，如果为空则该用户可以不需要密码登陆服务器</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">* 删除用户</span><br><span class="line">    ```sql</span><br><span class="line">    <span class="keyword">DROP</span> <span class="keyword">USER</span> <span class="string">'username'</span>@<span class="string">'host'</span>;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>启用主题</p>
+</ul>
+<ul>
+<li>修改密码  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> <span class="keyword">PASSWORD</span> <span class="keyword">FOR</span> <span class="string">'username'</span>@<span class="string">'host'</span> = <span class="keyword">PASSWORD</span>(<span class="string">'newpassword'</span>);</span><br><span class="line">``` </span><br><span class="line">修改当前登录用户的密码:</span><br><span class="line">```sql</span><br><span class="line"><span class="keyword">SET</span> <span class="keyword">PASSWORD</span> = <span class="keyword">PASSWORD</span>(<span class="string">"newpassword"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>查询  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> host,<span class="keyword">user</span> <span class="keyword">from</span> mysql.user;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="授权管理"><a href="#授权管理" class="headerlink" title="授权管理"></a>授权管理</h4><ul>
+<li><p>授予权限<br>  格式: <code>grant 权限 on 数据库对象 to 用户@主机</code></p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">privileges</span> <span class="keyword">ON</span> databasename.tablename <span class="keyword">TO</span> <span class="string">'username'</span>@<span class="string">'host'</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>修改站点配置文件， 找到 theme ，并将其值更改为 next</p>
+<ul>
+<li>privileges：操作权限   <pre><code>* SELECT(column,column),INSERT,UPDATE,DELETE   
+* CREATE,ALTER,DROP    
+* INDEX,references    
+* create temporary tables,create view    
+* create routine,alter routine,execute  
+</code></pre></li>
+<li>databasename：数据库名</li>
+<li>tablename：表名，如果要授予该用户对所有数据库和表的相应操作权限则可用<em>表示，如</em>.*</li>
+</ul>
+</blockquote>
+</li>
+<li><p>查看授权</p>
+<ul>
+<li><p>查看自己的授权</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">grants</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看其他人的授权</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">grants</span> <span class="keyword">for</span> <span class="string">'user'</span>@<span class="string">'host'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>撤销授权</p>
+<blockquote>
+<p>类似于授权，将 grant 改为 revoke, to 改为 from 即可</p>
 </blockquote>
 </li>
 </ul>
-<a id="more"></a>
-<h3 id="配置主题-next"><a href="#配置主题-next" class="headerlink" title="配置主题 next"></a>配置主题 next</h3><ul>
-<li><p>选择 Scheme</p>
 <blockquote>
-<p>修改主题配置文件</p>
-</blockquote>
-</li>
-<li><p>增加分类页、标签页</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"categories"</span></span><br><span class="line">hexo new page <span class="string">"tags"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改page “categories”的 front_matter 如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>: <span class="string">"categories"</span></span><br><span class="line">comments: <span class="literal">false</span> <span class="comment">#关闭评论</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改page “tags”的 front_matter 如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>: <span class="string">"tags"</span></span><br><span class="line">comments: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>设置菜单</p>
-<blockquote>
-<p>菜单增加“分类”、“标签”<br>  编辑主题配置文件,找到如下配置，去掉注释#</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#tags: /tags/ || tags</span></span><br><span class="line"><span class="comment">#categories: /categories/ || th</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li><p>代码块增加按钮“复制”</p>
-<blockquote>
-<p>修改主题配置文件<br>codeblock.copy_button.enable = true</p>
-</blockquote>
-</li>
+<ul>
+<li>grant, revoke 某用户权限后，该用户只有重新连接 MySQL 数据库，权限才能生效  </li>
+<li>如果想让授权的用户，也可以将这些权限 grant 给其他用户，需要选项 “grant option“</li>
 </ul>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
-<li><a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">next官网</a></li>
-<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo中文</a></li>
-</ul>
+</blockquote>
 
       
     </div>
@@ -483,7 +493,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/MySql/" rel="tag"># MySql</a>
           
         </div>
       
@@ -496,8 +506,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/10/Github_Hexo/" rel="next" title="Github + Hexo + Win7 安装手记">
-                <i class="fa fa-chevron-left"></i> Github + Hexo + Win7 安装手记
+              <a href="/2018/11/15/Win2003-MySql5-6-42/" rel="next" title="Win2003下安装MySql 5.6.42">
+                <i class="fa fa-chevron-left"></i> Win2003下安装MySql 5.6.42
               </a>
             
           </div>
@@ -505,10 +515,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/12/GuiZhou201808/" rel="prev" title="2018年8月贵州行">
-                2018年8月贵州行 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -664,7 +670,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#站点配置"><span class="nav-number">1.</span> <span class="nav-text">站点配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装主题-next"><span class="nav-number">2.</span> <span class="nav-text">安装主题 next</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置主题-next"><span class="nav-number">3.</span> <span class="nav-text">配置主题 next</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户管理"><span class="nav-number">1.</span> <span class="nav-text">用户管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#授权管理"><span class="nav-number">2.</span> <span class="nav-text">授权管理</span></a></li></ol></div>
             
 
           </div>
