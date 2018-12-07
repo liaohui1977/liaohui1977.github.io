@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[nginx 日志配置]]></title>
+    <title><![CDATA[nginx 常用指令汇总1]]></title>
     <url>%2F2018%2F12%2F06%2Fnginx-log%2F</url>
-    <content type="text"><![CDATA[access_log 指定是否关闭日志，日志文件的路径、格式名称等等1234Syntax: access_log path [format [buffer=size] [gzip[=level]] [flush=time] [if=condition]]; access_log off;Default:access_log logs/access.log combined;Context:http, server, location, if in location, limit_except log_format 设置一个日志格式，其名称可以用在指令 access_log 的参数12345Syntax: log_format name [escape=default|json|none] string ...;Default: log_format combined "...";Context:http]]></content>
+    <content type="text"><![CDATA[日志 access_log (官网参考) 指定是否关闭日志，日志文件的路径、格式名称等等 1234Syntax: access_log path [format [buffer=size] [gzip[=level]] [flush=time] [if=condition]]; access_log off;Default:access_log logs/access.log combined;Context:http, server, location, if in location, limit_except log_format (官网参考) 设置一个日志格式，其名称可以用在指令 access_log 的参数 12345Syntax: log_format name [escape=default|json|none] string ...;Default: log_format combined "...";Context:http 限制访问 allow （官网参考） 123Syntax: allow address | CIDR | unix: | all;Default: —Context: http, server, location, limit_except &lt; Allows access for the specified network or address. If the special value unix: is specified (1.5.1), allows access for all UNIX-domain sockets. deny (官网参考) 123Syntax: deny address | CIDR | unix: | all;Default: —Context: http, server, location, limit_except Denies access for the specified network or address. If the special value unix: is specified (1.5.1), denies access for all UNIX-domain sockets. 这里的 address 是与 nginx 直连的 remote_addr ,默认情况下，如果不修改 remote_addr 的默认值，其指向的是与nginx服务器直连的客户端的IP,如果是多层反代，需考虑替换 remote_addr ,否则限制访问的只是与 nginx 服务器直连的 下游 nginx 服务器。 set_real_ip_from (官网参考) 这个指令需要启用模块 ngx_http_realip_module,该模块默认没有编译，启用该模块，编译需增加参数 --with-http_realip_module 123Syntax: set_real_ip_from address | CIDR | unix:;Default: —Context: http, server, location 定义信任的地址范围，以启用客户端地址替换 real_ip_header (官网参考)1234Syntax: real_ip_header field | X-Real-IP | X-Forwarded-For | proxy_protocol;Default: real_ip_header X-Real-IP;Context: http, server, location 定义 remote_addr 的替换方式,默认使用 X-Real-IP]]></content>
       <categories>
         <category>技术</category>
       </categories>

@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="access_log 指定是否关闭日志，日志文件的路径、格式名称等等1234Syntax:	access_log path [format [buffer=size] [gzip[=level]] [flush=time] [if=condition]];        access_log off;Default:access_log logs/access.log combined;Conte">
+  <meta name="description" content="nginx 常用指令 access_log,log_format,allow,deny,set_real_ip_from,_">
 <meta name="keywords" content="nginx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nginx 日志配置">
+<meta property="og:title" content="nginx 常用指令汇总1">
 <meta property="og:url" content="https://blog.liaohui.info/2018/12/06/nginx-log/index.html">
 <meta property="og:site_name" content="廖辉&#39;s blog">
-<meta property="og:description" content="access_log 指定是否关闭日志，日志文件的路径、格式名称等等1234Syntax:	access_log path [format [buffer=size] [gzip[=level]] [flush=time] [if=condition]];        access_log off;Default:access_log logs/access.log combined;Conte">
+<meta property="og:description" content="nginx 常用指令 access_log,log_format,allow,deny,set_real_ip_from,_">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-06T09:06:56.511Z">
+<meta property="og:updated_time" content="2018-12-07T09:12:48.945Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nginx 日志配置">
-<meta name="twitter:description" content="access_log 指定是否关闭日志，日志文件的路径、格式名称等等1234Syntax:	access_log path [format [buffer=size] [gzip[=level]] [flush=time] [if=condition]];        access_log off;Default:access_log logs/access.log combined;Conte">
+<meta name="twitter:title" content="nginx 常用指令汇总1">
+<meta name="twitter:description" content="nginx 常用指令 access_log,log_format,allow,deny,set_real_ip_from,_">
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>nginx 日志配置 | 廖辉's blog</title>
+  <title>nginx 常用指令汇总1 | 廖辉's blog</title>
   
 
 
@@ -316,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">nginx 日志配置
+          <h1 class="post-title" itemprop="name headline">nginx 常用指令汇总1
               
             
           </h1>
@@ -341,12 +341,24 @@
                 
               
 
-              <time title="创建时间：2018-12-06 16:57:40 / 修改时间：17:06:56" itemprop="dateCreated datePublished" datetime="2018-12-06T16:57:40+08:00">2018-12-06</time>
+              <time title="创建时间：2018-12-06 16:57:40" itemprop="dateCreated datePublished" datetime="2018-12-06T16:57:40+08:00">2018-12-06</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-07 17:12:48" itemprop="dateModified" datetime="2018-12-07T17:12:48+08:00">2018-12-07</time>
               
             
           </span>
@@ -383,6 +395,8 @@
           
 
           
+              <div class="post-description">nginx 常用指令 access_log,log_format,allow,deny,set_real_ip_from,_</div>
+          
 
         </div>
       </header>
@@ -397,11 +411,51 @@
       
 
       
-        <h4 id="access-log"><a href="#access-log" class="headerlink" title="access_log"></a><a href="http://nginx.org/en/docs/http/ngx_http_log_module.html#access_log" target="_blank" rel="noopener">access_log</a></h4><blockquote>
-<p>指定是否关闭日志，日志文件的路径、格式名称等等<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Syntax:	access_log path [format [buffer=size] [gzip[=level]] [flush=time] [if=condition]];</span><br><span class="line">        access_log off;</span><br><span class="line">Default:access_log logs/access.log combined;</span><br><span class="line">Context:http, server, location, if in location, limit_except</span><br></pre></td></tr></table></figure></p>
+        <h4 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h4><ul>
+<li><p>access_log (<a href="http://nginx.org/en/docs/http/ngx_http_log_module.html#access_log" target="_blank" rel="noopener">官网参考</a>)</p>
+<blockquote>
+<p>指定是否关闭日志，日志文件的路径、格式名称等等</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Syntax:	access_log path [format [buffer=size] [gzip[=level]] [flush=time] [if=condition]];</span><br><span class="line">        access_log off;</span><br><span class="line">Default:access_log logs/access.log combined;</span><br><span class="line">Context:http, server, location, if in location, limit_except</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h4 id="log-format"><a href="#log-format" class="headerlink" title="log_format"></a><a href="http://nginx.org/en/docs/http/ngx_http_log_module.html#log_format" target="_blank" rel="noopener">log_format</a></h4><blockquote>
-<p>设置一个日志格式，其名称可以用在指令 access_log 的参数<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Syntax:	</span><br><span class="line">    log_format name [escape=default|json|none] string ...;</span><br><span class="line">Default:	</span><br><span class="line">    log_format combined "...";</span><br><span class="line">Context:http</span><br></pre></td></tr></table></figure></p>
+</li>
+<li><p>log_format (<a href="http://nginx.org/en/docs/http/ngx_http_log_module.html#log_format" target="_blank" rel="noopener">官网参考</a>)</p>
+<blockquote>
+<p>设置一个日志格式，其名称可以用在指令 access_log 的参数</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Syntax:	</span><br><span class="line">    log_format name [escape=default|json|none] string ...;</span><br><span class="line">Default:	</span><br><span class="line">    log_format combined "...";</span><br><span class="line">Context:http</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<h4 id="限制访问"><a href="#限制访问" class="headerlink" title="限制访问"></a>限制访问</h4><ul>
+<li>allow （<a href="http://nginx.org/en/docs/http/ngx_http_access_module.html#allow" target="_blank" rel="noopener">官网参考</a>） <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Syntax:	allow address | CIDR | unix: | all;</span><br><span class="line">Default:	—</span><br><span class="line">Context:	http, server, location, limit_except</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>&lt; Allows access for the specified network or address. If the special value unix: is specified (1.5.1), allows access for all UNIX-domain sockets.</p>
+<ul>
+<li>deny (<a href="http://nginx.org/en/docs/http/ngx_http_access_module.html#deny" target="_blank" rel="noopener">官网参考</a>) <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Syntax:	deny address | CIDR | unix: | all;</span><br><span class="line">Default:	—</span><br><span class="line">Context:	http, server, location, limit_except</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>Denies access for the specified network or address. If the special value unix: is specified (1.5.1), denies access for all UNIX-domain sockets.</li>
+<li>这里的 address 是与 nginx 直连的 remote_addr ,默认情况下，如果不修改 remote_addr 的默认值，其指向的是与nginx服务器直连的客户端的IP,如果是多层反代，需考虑替换 remote_addr ,否则限制访问的只是与 nginx 服务器直连的 下游 nginx 服务器。</li>
+</ul>
+</blockquote>
+<ul>
+<li>set_real_ip_from (<a href="http://nginx.org/en/docs/http/ngx_http_realip_module.html#set_real_ip_from" target="_blank" rel="noopener">官网参考</a>)<blockquote>
+<p>这个指令需要启用模块 <a href="http://nginx.org/en/docs/http/ngx_http_realip_module.html" target="_blank" rel="noopener">ngx_http_realip_module</a>,该模块默认没有编译，启用该模块，编译需增加参数 <code>--with-http_realip_module</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Syntax:	set_real_ip_from address | CIDR | unix:;</span><br><span class="line">Default:	—</span><br><span class="line">Context:	http, server, location</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>定义信任的地址范围，以启用客户端地址替换</p>
+</blockquote>
+<ul>
+<li>real_ip_header (<a href="http://nginx.org/en/docs/http/ngx_http_realip_module.html#real_ip_header" target="_blank" rel="noopener">官网参考</a>)<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Syntax:	real_ip_header field | X-Real-IP | X-Forwarded-For | proxy_protocol;</span><br><span class="line">Default:	</span><br><span class="line">real_ip_header X-Real-IP;</span><br><span class="line">Context:	http, server, location</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>定义 remote_addr 的替换方式,默认使用 X-Real-IP</p>
 </blockquote>
 
       
@@ -602,7 +656,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#access-log"><span class="nav-number">1.</span> <span class="nav-text">access_log</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#log-format"><span class="nav-number">2.</span> <span class="nav-text">log_format</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#日志"><span class="nav-number">1.</span> <span class="nav-text">日志</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#限制访问"><span class="nav-number">2.</span> <span class="nav-text">限制访问</span></a></li></ol></div>
             
 
           </div>
