@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ubuntu16.04安装最新版nodejs]]></title>
+    <url>%2F2018%2F12%2F13%2Fnodejs-1%2F</url>
+    <content type="text"><![CDATA[更新ubuntu软件源1234sudo apt-get updatesudo apt-get install -y python-software-properties software-properties-commonsudo add-apt-repository ppa:chris-lea/node.jssudo apt-get update 安装 nodejs123sudo apt-get install nodejssudo apt install nodejs-legacysudo apt install npm 更新npm的包镜像源，方便快速下载12sudo npm config set registry https://registry.npm.taobao.orgsudo npm config list 全局安装n管理器(用于管理nodejs版本)1sudo npm install n -g 安装最新的nodejs（stable版本）12sudo n stablesudo node -v]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>nodejs</tag>
+        <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[TP5学习手记3(命令行)]]></title>
     <url>%2F2018%2F12%2F11%2FTP5Learn3%2F</url>
     <content type="text"><![CDATA[thinkphp 5.1 命令行参考官方文档 查看版本1php think version 生成模块 快速生成模块 生成一个test模块 1php think build --module test 批量生成模块 需要定义规则文件build.php并放入应用目录下面,默认的框架的根目录下面自带了一个build.php示例参考文件 1php think build 生成类文件 生成控制器 生成index模块的Blog控制器类库文件 1php think make:controller index/Blog 生成index模块的Blog控制器类库文件,无内部方法，空框架1php think make:controller index/Blog --plain 生成模型 1php think make:model index/Blog 生成中间件 1php think make:middleware Auth 创建验证器类 1&gt;php think make:validate index/User 生成类库映射文件 使用下面的指令生成类库映射文件，提高系统自动加载的性能1&gt;php think optimize:autoload 清除缓存文件 清除应用的缓存文件 1php think clear 清除某个指定目录下面的文件 1php think clear --path d:\www\tp5\runtime\log\ 清除日志目录 1php think clear --log 清除日志目录并删除空目录 1php think clear --log --dir 清除数据缓存目录 1php think clear --cache 清除数据缓存目录并删除空目录 1php think clear --cache --dir 清除路由缓存 1php think clear --route 生成配置缓存 为应用或者模块生成配置缓存文件默认生成应用的配置缓存文件，调用后会在runtime目录下面生成init.php文件，生成配置缓存文件后，应用目录下面的config.phpcommon.php以及tags.php不会被加载，被runtime/init.php取代。1php think optimize:config 成某个模块的配置缓存1php think optimize:config index 生成数据表字段缓存 字段缓存仅在部署模式下生效生成数据表字段信息缓存，提升数据库查询的性能，避免多余的查询。 常用指令1php think optimize:schema 指定数据库生成字段缓存（必须有用户权限） 1php think optimize:schema --db demo 根据模块来生成 读取index模块的模型来生成数据表字段缓存,没有继承think\Model类的（抽象）模型类不会生成 1php think optimize:schema --module index 单独更新某个数据表的缓存 1php think optimize:schema --table think_user 单独更新某个数据表的缓存(指定数据库) 1php think optimize:schema --table demo.think_user 生成路由映射缓存 路由映射缓存用于开启路由延迟解析的情况下，支持路由反解的URL生成，如果你没有开启路由延迟解析或者没有使用URL路由反解生成则不需要生成。1php think optimize:route 输出并生成路由列表 查看定义的路由列表 1php think route:list 不同的样式输出 box 样式 1php think route:list box box-double1php think route:list box-double markdown1php think route:list markdown 排序支持 支持排序的字段名包括：rule、route、name、method和domain（全部小写）按路由规则排序 1php think route:list -s rule 按请求类型排序1php think route:list -s method 输出详细信息1php think route:list -m]]></content>
