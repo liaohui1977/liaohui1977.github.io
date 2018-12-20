@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="廖辉&#39;s blog">
 <meta property="og:description" content="json_decode,json_encode">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-14T03:06:48.642Z">
+<meta property="og:updated_time" content="2018-12-14T03:39:26.920Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP 常用函数">
 <meta name="twitter:description" content="json_decode,json_encode">
@@ -358,7 +358,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-14 11:06:48" itemprop="dateModified" datetime="2018-12-14T11:06:48+08:00">2018-12-14</time>
+                <time title="修改时间：2018-12-14 11:39:26" itemprop="dateModified" datetime="2018-12-14T11:39:26+08:00">2018-12-14</time>
               
             
           </span>
@@ -456,6 +456,36 @@
 <p>如果有，返回 JSON 编码解码时最后发生的错误</p>
 </blockquote>
 <h4 id="变量处理函数"><a href="#变量处理函数" class="headerlink" title="变量处理函数"></a>变量处理函数</h4><ul>
+<li><p><a href="http://php.net/manual/zh/function.boolval.php" target="_blank" rel="noopener">boolval</a></p>
+<blockquote>
+<p>获取变量的布尔值</p>
+</blockquote>
+</li>
+<li><p><a href="http://php.net/manual/zh/function.doubleval.php" target="_blank" rel="noopener">doubleval</a>,<a href="http://php.net/manual/zh/function.floatval.php" target="_blank" rel="noopener">floatval</a></p>
+</li>
+<li><p><a href="http://php.net/manual/zh/function.intval.php" target="_blank" rel="noopener">intval</a></p>
+</li>
+<li><p><a href="http://php.net/manual/zh/function.get-defined-vars.php" target="_blank" rel="noopener">get_defined_vars</a></p>
+<blockquote>
+<p>此函数返回一个包含所有已定义变量列表的多维数组，这些变量包括环境变量、服务器变量和用户定义的变量</p>
+</blockquote>
+</li>
+<li><p><a href="http://php.net/manual/zh/function.get-resource-type.php" target="_blank" rel="noopener">get_resource_type</a></p>
+<blockquote>
+<p>此函数返回一个字符串，用于表示传递给它的 resource 的类型。如果参数不是合法的 resource，将产生错误。</p>
+</blockquote>
+</li>
+<li><p><a href="http://php.net/manual/zh/function.gettype.php" target="_blank" rel="noopener">gettype</a></p>
+<blockquote>
+<p>返回 PHP 变量的类型 var.<br>不要使用 gettype() 来测试某种类型，因为其返回的字符串在未来的版本中可能需要改变。此外，由于包含了字符串的比较，它的运行也是较慢的。使用 is_* 函数代替。</p>
+</blockquote>
+</li>
+<li><p><a href="http://php.net/manual/zh/function.import-request-variables.php" target="_blank" rel="noopener">import_request_variables</a></p>
+<blockquote>
+<p>将 GET／POST／Cookie 变量导入到全局作用域中。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bool import_request_variables ( string $types [, string $prefix ] )</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
 <li><p><a href="http://php.net/manual/zh/function.empty.php" target="_blank" rel="noopener">empty</a></p>
 <blockquote>
 <p>检查一个变量是否为空<br>当一个变量并不存在，或者它的值等同于FALSE，那么它会被认为不存在。如果变量不存在的话，empty()并不会产生警告<br>当var存在，并且是一个非空非零的值时返回 FALSE 否则返回 TRUE<br>以下的东西被认为是空的：  </p>
@@ -476,7 +506,8 @@
 <p>检测变量是否是数组</p>
 </blockquote>
 </li>
-<li><a href="http://php.net/manual/zh/function.is-bool.php" target="_blank" rel="noopener">is_bool</a></li>
+<li><p><a href="http://php.net/manual/zh/function.is-bool.php" target="_blank" rel="noopener">is_bool</a></p>
+</li>
 <li><p><a href="http://php.net/manual/zh/function.is-callable.php" target="_blank" rel="noopener">is_callable</a></p>
 <blockquote>
 <p>验证变量的内容能否作为函数调用。 这可以检查包含有效函数名的变量，或者一个数组，包含了正确编码的对象以及函数名。</p>
@@ -488,31 +519,41 @@
 <p>Verify that the contents of a variable is an array or an object implementing Countable</p>
 </blockquote>
 </li>
-<li><a href="http://php.net/manual/zh/function.is-double.php" target="_blank" rel="noopener">is_double</a>,<a href="http://php.net/manual/zh/function.is-float.php" target="_blank" rel="noopener">is_float</a>,<a href="http://php.net/manual/zh/function.is-real.php" target="_blank" rel="noopener">is_real</a><blockquote>
+<li><p><a href="http://php.net/manual/zh/function.is-double.php" target="_blank" rel="noopener">is_double</a>,<a href="http://php.net/manual/zh/function.is-float.php" target="_blank" rel="noopener">is_float</a>,<a href="http://php.net/manual/zh/function.is-real.php" target="_blank" rel="noopener">is_real</a></p>
+<blockquote>
 <p>is_real,is_double是 is_float() 的别名函数</p>
 </blockquote>
 </li>
-<li><a href="http://php.net/manual/zh/function.is-int.php" target="_blank" rel="noopener">is_int</a>,<a href="http://php.net/manual/zh/function.is-integer.php" target="_blank" rel="noopener">is_integer</a>,<a href="http://php.net/manual/zh/function.is-long.php" target="_blank" rel="noopener">is_long</a><blockquote>
+<li><p><a href="http://php.net/manual/zh/function.is-int.php" target="_blank" rel="noopener">is_int</a>,<a href="http://php.net/manual/zh/function.is-integer.php" target="_blank" rel="noopener">is_integer</a>,<a href="http://php.net/manual/zh/function.is-long.php" target="_blank" rel="noopener">is_long</a></p>
+<blockquote>
 <p>is_integer,is_long 都是 is_int() 的别名函数</p>
 </blockquote>
 </li>
-<li><a href="http://php.net/manual/zh/function.is-iterable.php" target="_blank" rel="noopener">is_iterable</a><blockquote>
+<li><p><a href="http://php.net/manual/zh/function.is-iterable.php" target="_blank" rel="noopener">is_iterable</a></p>
+<blockquote>
 <p>Verify that the contents of a variable is accepted by the iterable pseudo-type, i.e. that it is an array or an object implementing Traversable</p>
 </blockquote>
 </li>
-<li><a href="http://php.net/manual/zh/function.is-null.php" target="_blank" rel="noopener">is_null</a></li>
-<li><a href="http://php.net/manual/zh/function.is-numeric.php" target="_blank" rel="noopener">is_numeric</a><blockquote>
+<li><p><a href="http://php.net/manual/zh/function.is-null.php" target="_blank" rel="noopener">is_null</a></p>
+</li>
+<li><p><a href="http://php.net/manual/zh/function.is-numeric.php" target="_blank" rel="noopener">is_numeric</a></p>
+<blockquote>
 <p> 检测变量是否为数字或数字字符串</p>
 </blockquote>
 </li>
-<li><a href="http://php.net/manual/zh/function.is-object.php" target="_blank" rel="noopener">is_object</a></li>
-<li><a href="http://php.net/manual/zh/function.is-resource.php" target="_blank" rel="noopener">is_resource</a></li>
-<li><a href="http://php.net/manual/zh/function.is-scalar.php" target="_blank" rel="noopener">is_scalar</a><blockquote>
+<li><p><a href="http://php.net/manual/zh/function.is-object.php" target="_blank" rel="noopener">is_object</a></p>
+</li>
+<li><p><a href="http://php.net/manual/zh/function.is-resource.php" target="_blank" rel="noopener">is_resource</a></p>
+</li>
+<li><p><a href="http://php.net/manual/zh/function.is-scalar.php" target="_blank" rel="noopener">is_scalar</a></p>
+<blockquote>
 <p>检测变量是否是一个标量,标量变量是指那些包含了 integer、float、string 或 boolean的变量，而 array、object 和 resource 则不是标量</p>
 </blockquote>
 </li>
-<li><a href="http://php.net/manual/zh/function.is-string.php" target="_blank" rel="noopener">is_string</a></li>
-<li><a href="http://php.net/manual/zh/function.isset.php" target="_blank" rel="noopener">isset</a><blockquote>
+<li><p><a href="http://php.net/manual/zh/function.is-string.php" target="_blank" rel="noopener">is_string</a></p>
+</li>
+<li><p><a href="http://php.net/manual/zh/function.isset.php" target="_blank" rel="noopener">isset</a></p>
+<blockquote>
 <p>检测变量是否已设置并且非 NULL</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bool <span class="keyword">isset</span> ( mixed $var [, mixed $... ] )</span><br></pre></td></tr></table></figure>
 </blockquote>
@@ -560,7 +601,8 @@
 </li>
 <li><p><a href="http://php.net/manual/zh/function.var-dump.php" target="_blank" rel="noopener">var_dump</a></p>
 </li>
-<li><a href="http://php.net/manual/zh/function.var-export.php" target="_blank" rel="noopener">var_export</a><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mixed var_export ( mixed $expression [, bool $return ] )</span><br></pre></td></tr></table></figure>
+<li><p><a href="http://php.net/manual/zh/function.var-export.php" target="_blank" rel="noopener">var_export</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mixed var_export ( mixed $expression [, bool $return ] )</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
@@ -614,6 +656,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/20/httpStatusCode/" rel="prev" title="HTTP状态码(HTTP Status Code)">
+                HTTP状态码(HTTP Status Code) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -683,7 +729,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
